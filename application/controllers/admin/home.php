@@ -25,10 +25,12 @@ class Home extends CI_Controller {
 	}
 
 	public function savePost() {
+		date_default_timezone_set('America/New_York');
+
 		$post = array(
 				'title' => $this->input->post('title'),
-				'content' => $this->input->post('content'),
-				'date' => date('m/d/Y')
+				'content' => $this->input->post('editor1'),
+				'date' => date('Y-m-d H:i:s a')
 			);
 
 		$this->db->insert('blogposts', $post);
@@ -38,7 +40,7 @@ class Home extends CI_Controller {
 	public function updatePost($id) {
 		$post = array(
 				'title' => $this->input->post('title'),
-				'content' => $this->input->post('content')
+				'content' => $this->input->post('editor1')
 			);
 
 		$this->db->where('id', $id);
@@ -51,6 +53,24 @@ class Home extends CI_Controller {
 		$this->db->where('id', $id);
 		$data['post'] = $this->db->get('blogposts')->row();
 		$this->load->view('admin/includes/template', $data);
+	}
+
+	public function about() {
+		$data['main_content'] = 'admin/about';
+		$this->db->where('id', 1);
+		$data['content'] = $this->db->get('about')->row();
+		$this->load->view('admin/includes/template', $data);
+	}
+
+	public function updateAbout() {
+
+		$about = array(
+				'content' => $this->input->post('editor1')
+			);
+
+		$this->db->where('id', 1);
+		$this->db->update('about', $about);
+		redirect('admin/home/about');
 	}
 
 	public function deletePost($id) {

@@ -12,8 +12,31 @@
     <link href="<?php echo base_url(); ?>css/docs.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>google-code-prettify/prettify.css" rel="stylesheet">
 
+    <!-- CKeditor -->
+    <script src="<?php echo base_url(); ?>ckeditor/ckeditor.js"></script>
+
     <script type="text/javascript" src="//use.typekit.net/ymt3ujb.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-transition.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-alert.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-modal.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-dropdown.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-scrollspy.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-tab.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-tooltip.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-popover.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-button.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-collapse.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-carousel.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-typeahead.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap-affix.js"></script>
+    <script src="<?php echo base_url(); ?>js/holder/holder.js"></script>
+    <script src="<?php echo base_url(); ?>js/google-code-prettify/prettify.js"></script>
+    <script src="<?php echo base_url(); ?>js/application.js"></script>
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -43,6 +66,9 @@
                   </li>
                   <li class="">
                     <?php echo anchor('admin/home/blog', 'Blog Posts'); ?>
+                  </li>
+                  <li class="">
+                    <?php echo anchor('admin/home/about', 'Biography'); ?>
                   </li>
                   <li class="">
                     <?php echo anchor('login/logout', 'Logout'); ?>

@@ -2,7 +2,7 @@
  	<div class="container">
  		<div class="hero-unit">
 		  <h2>About Me</h2>
-		  <p>This is the about page.</p>
+		  <?php echo $content; ?>
 		</div>
 	</div>
 </div>

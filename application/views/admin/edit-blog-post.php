@@ -11,7 +11,7 @@
             </div>
             <div class="controls controls-row newBlogPost">
               <?php echo form_label('Blog Content:'); ?>
-              <?php echo form_textarea('content', $post->content, "class='span12' rows='15'"); ?>
+              <?php echo form_textarea('editor1', $post->content, "class='span12' rows='15'"); ?>
             </div>
           </div>
         </div>
@@ -28,3 +28,8 @@
     </div>
   </div>
 </div>
+
+
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>

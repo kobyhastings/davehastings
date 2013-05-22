@@ -28,21 +28,42 @@
     <br />
 
     <div class="row-fluid">
-      <div class="span4">
-        <h2>Blog Title</h2>
-        <p class="blogDate">March 19, 2013</p>
-        <p class="blogBody">This is the content of the blog. It will show the first 50 words of the blog. This is the content of the blog. It will show the first 125 words of the blog. This is the content of the blog. It will show the first 50 words of the blog. <?php echo anchor('blog/viewBlogPost', 'read more...'); ?>
-      </div>
-      <div class="span4">
-        <h2>Blog Title</h2>
-        <p class="blogDate">March 10, 2013</p>
-        <p class="blogBody">This is the content of the blog. It will show the first 50 words of the blog. This is the content of the blog. It will show the first 125 words of the blog. This is the content of the blog. It will show the first 50 words of the blog. <?php echo anchor('blog/viewBlogPost', 'read more...'); ?>
-      </div>
-      <div class="span4">
-        <h2>Blog Title</h2>
-        <p class="blogDate">March 3, 2013</p>
-        <p class="blogBody">This is the content of the blog. It will show the first 50 words of the blog. This is the content of the blog. It will show the first 125 words of the blog. This is the content of the blog. It will show the first 50 words of the blog. <?php echo anchor('blog/viewBlogPost', 'read more...'); ?>
-      </div>
+      <?php foreach ($posts as $post) { ?>
+        <div class="span4">
+          <h2>
+            <?php 
+              $title = str_split($post->title);
+              if(count($title) < 30) {
+                echo $post->title;   
+              } else {
+                for ($i=0; $i < 30; $i++) { 
+                  echo $title[$i];
+                }
+                echo "...";
+              }
+
+             ?>
+          </h2>
+          <p class="blogDate"><strong><?php echo date('F d, Y', strtotime($post->date)); ?></strong></p>
+          <div class="blogBody">
+            <?php 
+              $content = str_split($post->content);
+              if(count($content) < 200) {
+                echo $post->content;
+              } else {
+                for ($i=0; $i < 200; $i++) { 
+                  echo $content[$i];
+                }
+                echo "...";
+              }
+
+             ?>
+             <br />
+             <?php echo anchor('blog/viewBlogPost/'.$post->id, 'read more...'); ?>
+          </div>
+        </div>
+      <?php } ?>
+      
     </div>
   </div>
 

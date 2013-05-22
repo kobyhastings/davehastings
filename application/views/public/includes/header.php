@@ -48,9 +48,6 @@
                     <?php echo anchor('public/home/about', 'About'); ?>
                   </li>
                   <li class="">
-                    <?php echo anchor('public/home/contact', 'Contact'); ?>
-                  </li>
-                  <li class="">
                     <a href="#myModal" data-toggle="modal">Login</a>
                   </li>
                 </ul>

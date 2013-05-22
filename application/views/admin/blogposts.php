@@ -21,27 +21,21 @@
               <strong>
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#<?php echo $post->id; ?>">
                   <div class="row" style="margin-bottom: -10px;">
-                    <div class="span7 hidden-phone" id="title">
-                      <?php echo $post->title; ?>
+                    <div class="span3" id="date">
+                      <?php echo date('l F d, Y', strtotime($post->date))." @ ".date('g:i a', strtotime($post->date)); ?>
                     </div>
-                    <div class="span7 visible-phone" id="titlePhone">
-                      <?php echo $post->title; ?>
-                    </div>
-                    <div class="span3 hidden-phone" id="date">
-                      <?php echo "Posted on:".$post->date; ?>
+                    <div class="span7" id="titlePhone">
+                      <?php echo "<strong>".$post->title."</strong>"; ?>
                     </div>
                   </div>
                 </a>
               </strong>
             </div>
-            <?php if($count == 1) { ?>
-              <div id="<?php echo $post->id; ?>" class="accordion-body collapse in">
-            <?php } else { ?>
-              <div id="<?php echo $post->id; ?>" class="accordion-body collapse">
-            <?php } ?>
+            <div id="<?php echo $post->id; ?>" class="accordion-body collapse in">
               <div class="accordion-inner">
                 <div class="row-fluid raffleContainer">
                   <p id="postContent"><?php echo $post->content; ?></p>
+                  <br />
                   <?php echo anchor('admin/home/editPost/'.$post->id, 'Edit Post', "class='hidden-phone btn btn-small btn-inverse' id='btn-small' style='float:right;'"); ?>
                 </div>
               </div>
@@ -81,8 +75,9 @@
 
           <div class="controls controls-row newBlogPost">
           	<?php echo form_label('Blog Content:'); ?>
-          	<?php echo form_textarea('content', '', "class='span5' rows='15'"); ?>
+          	<?php echo form_textarea('editor1', '', "class='span5' rows='15'"); ?>
           </div>
+          <br />
           <center>
           	<?php echo form_submit(array('name'=>'submit', 'value'=>"Post", 'class'=>'btn btn-inverse')); ?>
           </center>
@@ -97,7 +92,11 @@
       //     echo "<hr />"; -->
 
 <script>
-      (function(){
-        $(".collapse").collapse('hide');
-      })();
-    </script>
+    (function(){
+      $(".collapse").collapse('hide');
+    })();
+</script>
+
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>

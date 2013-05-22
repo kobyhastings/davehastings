@@ -20,6 +20,8 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data['main_content'] = 'public/index';
+		$this->db->order_by('date', 'desc');
+		$data['posts'] = $this->db->get('blogposts', 3)->result();
 		$this->load->view('public/includes/template', $data);
 	}
 
@@ -32,6 +34,7 @@ class Home extends CI_Controller {
 	public function about()
 	{
 		$data['main_content'] = 'public/about';
+		$data['content'] = $this->db->get('about', 1)->row()->content;
 		$this->load->view('public/includes/template', $data);
 	}
 
