@@ -202,11 +202,6 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   line-height: 1;
   letter-spacing: -2px;
 }
-.masthead p {
-  font-size: 40px;
-  font-weight: 200;
-  line-height: 1.25;
-}
 
 /* Textual links in masthead */
 .masthead-links {
@@ -1213,7 +1208,7 @@ a.accordion-toggle #date {
   color: #666;
   font-weight: normal;
   text-shadow: none;
-  font-size: 16px;
+  font-size: 14px;
   font-style: italic;
 }
 
@@ -1250,4 +1245,45 @@ h2 {
 .marketing .row-fluid .span4 {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+h2#postTitle {
+  color: #fff;
+  font-size: 30px;
+  text-align: left;
+}
+
+.masthead p {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.masthead {
+  text-align: left;
+}
+
+#blog_post {
+    color: #ddd;
+    padding-bottom: 0px;
+    padding-top: 20px;
+    border-bottom: 1px solid #3A0000;
+}
+
+
+.pagination a {
+  color: #333;
+}
+
+.pagination a:hover, a:active {
+  color: #666;
+}
+
+
+#sharePost {
+  float:right;
+}
+
+#sharePost li {
+  display: block;
 }

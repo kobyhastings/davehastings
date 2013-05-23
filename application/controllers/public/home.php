@@ -25,9 +25,31 @@ class Home extends CI_Controller {
 		$this->load->view('public/includes/template', $data);
 	}
 
-	public function blog()
+	public function blog($start = 0)
 	{
 		$data['main_content'] = 'public/blog';
+
+		$this->load->library('pagination');
+		$config['base_url'] = base_url() . '/index.php/public/home/blog/';
+		$config['total_rows'] = $this->db->get('blogposts')->num_rows();
+		$config['per_page'] = 4; 
+		$config['uri_segment'] = 4;
+		$this->pagination->initialize($config);
+		$data['pages'] = $this->pagination->create_links();
+
+		$this->db->order_by('date', 'desc');
+		$data['posts'] = $this->db->get('blogposts', 4, $start)->result();
+
+		$this->load->view('public/includes/template', $data);
+	}
+
+	public function viewPost($id)
+	{
+		$data['main_content'] = 'public/view-post';
+
+		$this->db->where('id', $id);
+		$data['post'] = $this->db->get('blogposts')->row();
+
 		$this->load->view('public/includes/template', $data);
 	}
 

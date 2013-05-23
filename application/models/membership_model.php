@@ -18,7 +18,7 @@ class Membership_model extends MY_Model {
 		if (count($user) == 1) {
 			$data = array(
 				'username' => $user->username,
-				'user_id' => $user->user_id, 
+				'user_id' => $user->id, 
 				'is_logged_in' => TRUE
 			);
 			$this->session->set_userdata( $data );

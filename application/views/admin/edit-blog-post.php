@@ -20,7 +20,8 @@
             <center>
               <br />
               <?php echo form_submit(array('name'=>'submit', 'value'=>"Save", 'class'=>'btn btn-inverse', 'id'=>'btn-small')); ?>
-              <?php echo anchor('admin/home/deletePost/'.$post->id, 'Delete Post', "class='hidden-phone btn btn-small btn-inverse' id='btn-small'"); ?>
+              <?php $attributes = array('class' => 'hidden-phone btn btn-small btn-inverse', 'id' => 'btn-small', 'onclick' => "return confirm('Are you sure you would like to delete this blog post?');") ?>
+              <?php echo anchor('admin/home/deletePost/'.$post->id, 'Delete Post', $attributes); ?>
             </center>
           </div>
         </div>

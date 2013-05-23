@@ -2,8 +2,10 @@
 
 <div class="jumbotron masthead">
   <div class="container">
+    <center>
     <h1>Welcome</h1>
-    <p>Welcome to my blog. This site is currently under construction.</p>
+    <p style="text-align: center;">Welcome to my blog. Feel free to look around!</p>
+  </center>
   </div>
 </div>
 
@@ -12,9 +14,6 @@
     <ul class="bs-docs-social-buttons">
       <li class="follow-btn">
         <a href="https://twitter.com/preacherhaste" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @preacherhaste</a>
-      </li>
-      <li class="tweet-btn">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Share</a>
       </li>
     </ul>
   </div>
@@ -59,7 +58,7 @@
 
              ?>
              <br />
-             <?php echo anchor('blog/viewBlogPost/'.$post->id, 'read more...'); ?>
+             <?php echo anchor('public/home/viewPost/'.$post->id, 'read more...'); ?>
           </div>
         </div>
       <?php } ?>

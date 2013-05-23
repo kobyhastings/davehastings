@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/sites/davehastings/';
+$config['base_url']	= 'http://davehastings.org/';
 
 /*
 |--------------------------------------------------------------------------

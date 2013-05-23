@@ -48,9 +48,13 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
+// $db['default']['hostname'] = 'localhost';
+// $db['default']['username'] = 'root';
+// $db['default']['password'] = '';
+// $db['default']['database'] = 'davehastings';
+$db['default']['hostname'] = 'davehastings.db.9037695.hostedresource.com';
+$db['default']['username'] = 'davehastings';
+$db['default']['password'] = 'Homerun5!';
 $db['default']['database'] = 'davehastings';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
