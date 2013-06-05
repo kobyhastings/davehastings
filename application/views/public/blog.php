@@ -8,6 +8,7 @@
   <?php if(isset($post) && $post != NULL && $post != '') { ?>  
     <div class="hero-unit">      
       <h2><?php echo $post->title; ?></h2>
+      <p class="indexViewsCounter"><?php echo $post->views." views"; ?></p>
       <p>
         <?php 
           $content = str_split($post->content);
@@ -33,6 +34,7 @@
           <?php if($counter != 1) { ?>
             <div id="blog_post">
               <h2 id="postTitle"><?php echo $post->title; ?><small> <em><?php echo date('F d, Y', strtotime($post->date)); ?></em></small></h2>
+              <p class="indexViewsCounter" style="color: #fff;"><?php echo $post->views." views"; ?></p>
               <p id="postContent">
                 <?php 
                 $content = str_split($post->content);

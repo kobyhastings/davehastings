@@ -9,6 +9,7 @@
         <div class="fb-like" data-href="http://localhost/sites/davehastings" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
       </div>     
       <h2><?php echo $post->title; ?></h2>
+      <p class="indexViewsCounter"><?php echo $post->views." views"; ?></p>
       <p><?php echo $post->content; ?></p>
     </div>
 

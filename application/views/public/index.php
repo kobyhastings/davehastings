@@ -43,6 +43,7 @@
 
              ?>
           </h2>
+          <p class="indexViewsCounter"><?php echo $post->views." views"; ?></p>
           <p class="blogDate"><strong><?php echo date('F d, Y', strtotime($post->date)); ?></strong></p>
           <div class="blogBody">
             <?php 
@@ -58,8 +59,8 @@
 
              ?>
              <br />
-             <?php echo anchor('public/home/viewPost/'.$post->id, 'read more...'); ?>
           </div>
+             <?php echo anchor('public/home/viewPost/'.$post->id, 'read more...'); ?>
         </div>
       <?php } ?>
       

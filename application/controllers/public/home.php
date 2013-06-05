@@ -48,6 +48,13 @@ class Home extends CI_Controller {
 		$data['main_content'] = 'public/view-post';
 
 		$this->db->where('id', $id);
+		$views = $this->db->get('blogposts')->row()->views;
+		$views++;
+		$update = array('views' => $views);
+		$this->db->where('id', $id);
+		$this->db->update('blogposts', $update);
+
+		$this->db->where('id', $id);
 		$data['post'] = $this->db->get('blogposts')->row();
 
 		$this->load->view('public/includes/template', $data);
